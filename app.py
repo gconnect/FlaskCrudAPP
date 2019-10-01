@@ -25,6 +25,7 @@ if ENV == 'dev':
 else:
     # production
     app.debug = False
+    app.config['SECRET_KEY'] = 'secret1234'
     # app.config['SQLALCHEMY_DATABASE_URI'] = "DATABASE_URL"
     app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://qmyqkeeonlrzov:0e0fc6095953361d9a66ba03caa26a36e5b3eed71f7ef99d2ed70e6ee032757c@ec2-174-129-227-80.compute-1.amazonaws.com:5432/drccdheka65tb"
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -226,5 +227,5 @@ def delete_article(id):
     return redirect(url_for('dashboard'))
 
 if __name__ == '__main__':
-    # app.secret_key = 'secret123'
+    app.secret_key = 'secret1234'
     app.run()
