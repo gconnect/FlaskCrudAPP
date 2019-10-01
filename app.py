@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 # Articles = Articles()
 
-ENV = 'prod'
+ENV = 'dev'
 # development
 if ENV == 'dev':
     app.debug = True
