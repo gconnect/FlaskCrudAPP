@@ -17,15 +17,15 @@ app = Flask(__name__)
 
 # Articles = Articles()
 
-ENV = 'prod'
+ENV = 'dev'
 # development
 if ENV == 'dev':
     app.debug = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:quickerpay@localhost/flaskcrud_db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:quickerpay@localhost/flaskcrud_db"
 else:
     # production
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = ' postgres://xblynsywyzpczg:ba77afe78b8ae1e87d145eb556df07b9de7bef1fd8fd32134987958bc853bf98@ec2-184-73-232-93.compute-1.amazonaws.com:5432/d6kevldvq4pt77'
+    app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://xblynsywyzpczg:ba77afe78b8ae1e87d145eb556df07b9de7bef1fd8fd32134987958bc853bf98@ec2-184-73-232-93.compute-1.amazonaws.com:5432/d6kevldvq4pt77"
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # database object
