@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 # Articles = Articles()
 
-ENV = 'dev'
+ENV = 'prod'
 # development
 if ENV == 'dev':
     app.debug = True
@@ -25,7 +25,8 @@ if ENV == 'dev':
 else:
     # production
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://xblynsywyzpczg:ba77afe78b8ae1e87d145eb556df07b9de7bef1fd8fd32134987958bc853bf98@ec2-184-73-232-93.compute-1.amazonaws.com:5432/d6kevldvq4pt77"
+    app.config['SQLALCHEMY_DATABASE_URI'] = "DATABASE_URL"
+    # app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://qmyqkeeonlrzov:0e0fc6095953361d9a66ba03caa26a36e5b3eed71f7ef99d2ed70e6ee032757c@ec2-174-129-227-80.compute-1.amazonaws.com:5432/drccdheka65tb"
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # database object
